@@ -56,11 +56,35 @@ Run `ng generate component component-name` to generate a new component. You can 
 ### Frontend (Angular)
 
 src/
- -auth/           # Authentication components
- -core/           # Core services and guards
- -tasks/          # Task-related components
- -navbar/         # Navigation component
- -app.module.ts   # Main application module
+
+├── auth/           # Authentication components
+
+├── core/           # Core services and guards
+├── tasks/          # Task-related components
+
+├── navbar/         # Navigation component
+
+└── app.module.ts   # Main application module
+
+## Development Process
+
+1. Start the backend server first
+2. Start the Angular development server
+3. Register a new account
+4. Login with your credentials
+5. Start managing your tasks!
+
+## Common Issues & Troubleshooting
+
+1. **Backend Connection Error**
+   - Ensure MongoDB is running
+   - Check if the correct MongoDB URI is in `.env`
+   - Verify the backend is running on port 3000
+
+2. **Frontend Issues**
+   - Clear browser cache
+   - Check console for errors
+   - Ensure all dependencies are installed
 
 
 ## Build
