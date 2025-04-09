@@ -60,6 +60,7 @@ src/
 ├── auth/           # Authentication components
 
 ├── core/           # Core services and guards
+
 ├── tasks/          # Task-related components
 
 ├── navbar/         # Navigation component
