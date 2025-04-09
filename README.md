@@ -1,6 +1,23 @@
-# TMFrontend
+# Task Management Application
+
+A full-stack task management application built with Angular and Node.js.
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+- Node.js (v14 or higher)
+- npm (Node Package Manager)
+- Angular CLI (`npm install -g @angular/cli`)
+- MongoDB (running locally or have a MongoDB Atlas connection string)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
+## Getting Started
+
+1. Navigate to the frontend directory:
+ cd frontend
+2. Install dependencies:
+ npm install
 
 ## Development server
 
@@ -10,6 +27,42 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
+## Application Features
+
+### Authentication
+
+- User registration with email and password
+- User login with JWT authentication
+- Protected routes using Auth Guard
+
+### Task Management
+
+- Create new tasks
+- View list of tasks
+- Update existing tasks
+- Delete tasks
+- Mark tasks as complete/incomplete
+
+### User Interface
+
+- Responsive design
+- Form validation
+- Error handling
+- Loading states
+- Navigation menu
+
+## Project Structure
+
+### Frontend (Angular)
+
+src/
+├── auth/           # Authentication components
+├── core/           # Core services and guards
+├── tasks/          # Task-related components
+├── navbar/         # Navigation component
+└── app.module.ts   # Main application module
+
+
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
@@ -18,10 +71,4 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
