@@ -56,11 +56,11 @@ Run `ng generate component component-name` to generate a new component. You can 
 ### Frontend (Angular)
 
 src/
-├── auth/           # Authentication components
-├── core/           # Core services and guards
-├── tasks/          # Task-related components
-├── navbar/         # Navigation component
-└── app.module.ts   # Main application module
+ -auth/           # Authentication components
+ -core/           # Core services and guards
+ -tasks/          # Task-related components
+ -navbar/         # Navigation component
+ -app.module.ts   # Main application module
 
 
 ## Build
