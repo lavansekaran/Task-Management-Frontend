@@ -1,0 +1,38 @@
+<section class="loginSection">
+  <div class="container-fluid">
+    <div class="login-card animate-entry">
+      <h2>Login Form</h2>
+
+      <div class="tab-buttons">
+        <button class="tab-btn active" routerLink="/login">Login</button>
+        <button class="tab-btn" routerLink="/register">Signup</button>
+      </div>
+
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="form-field">
+          <input type="email" formControlName="email" placeholder="Email Address">
+          <div class="error-message" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors">
+            <span *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</span>
+            <span *ngIf="loginForm.get('email')?.errors?.['email']">Please enter a valid email</span>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <input type="password" formControlName="password" placeholder="Password">
+          <div class="error-message"
+            *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']">
+            Password is required
+          </div>
+        </div>
+
+
+
+        <button type="submit" class="submit-btn" [disabled]="loginForm.invalid">Login</button>
+      </form>
+
+      <p class="signup-link">
+        Not a member? <a routerLink="/register">Signup now</a>
+      </p>
+    </div>
+  </div>
+</section>

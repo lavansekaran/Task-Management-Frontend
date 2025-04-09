@@ -1,0 +1,48 @@
+<section class="regSection">
+  <div class="container-fluid">
+    <div class="signup-card">
+      <h2>Signup Form</h2>
+
+      <div class="toggle-buttons">
+        <a routerLink="/login" class="toggle-btn">Login</a>
+        <a routerLink="/register" class="toggle-btn active">Signup</a>
+      </div>
+
+      <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <div class="form-field">
+          <input type="email" formControlName="email" placeholder="Email Address"
+            [class.error]="registerForm.get('email')?.touched && registerForm.get('email')?.invalid">
+          <div class="error-message" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors">
+            <span *ngIf="registerForm.get('email')?.errors?.['required']">Email is required</span>
+            <span *ngIf="registerForm.get('email')?.errors?.['email']">Please enter a valid email</span>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <input type="password" formControlName="password" placeholder="Password"
+            [class.error]="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
+          <div class="error-message"
+            *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.errors">
+            <span *ngIf="registerForm.get('password')?.errors?.['required']">Password is required</span>
+            <span *ngIf="registerForm.get('password')?.errors?.['minlength']">Password must be at least 6
+              characters</span>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <input type="password" formControlName="confirmPassword" placeholder="Confirm password"
+            [class.error]="registerForm.get('confirmPassword')?.touched && registerForm.get('confirmPassword')?.invalid">
+          <div class="error-message" *ngIf="registerForm.get('confirmPassword')?.touched && 
+             (registerForm.get('confirmPassword')?.errors || registerForm.errors?.['passwordMismatch'])">
+            <span *ngIf="registerForm.get('confirmPassword')?.errors?.['required']">Please confirm your password</span>
+            <span *ngIf="registerForm.errors?.['passwordMismatch']">Passwords do not match</span>
+          </div>
+        </div>
+
+        <button type="submit" class="signup-btn" [disabled]="registerForm.invalid">
+          Signup
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
